@@ -5,6 +5,7 @@
   "homepage": "https://vampirerachel.github.io/goit-js-hw-08/",
   "scripts": {
     "start": "parcel src/*.html",
+    "type": "module",
     "build": "parcel build src/*.html --public-url /goit-js-hw-08/"
   },
   "repository": {
@@ -18,7 +19,8 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "modern-normalize": "^1.1.0",
+    "simplelightbox": "^2.12.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
@@ -27,5 +29,4 @@
     "posthtml-include": "^1.7.4"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
-  
 }
