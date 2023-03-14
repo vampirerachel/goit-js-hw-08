@@ -6,25 +6,23 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import { galleryItems } from './gallery-items';
 // Change code below this line
 
-console.log(galleryItems);
 const containerEl = document.querySelector('.gallery')
 
 galleryItems.forEach(item => {
-    let div = document.createElement('div');
-    div.classList.add('class', "gallery__item");
-    div.innerHTML = `
-<a class="gallery__link" href="${item.original}"><img class="gallery__image" src="${item.preview}"
-    data-source="${item.original}"
-    alt="${item.description}"
-    /></a> `
-    containerEl.append(div)
-    div.addEventListener('click', (e) => {
-    e.preventDefault()
-    const instance = basicLightbox.create(`
-    <img src= "${item.original}">`)
-    instance.show()
-    instance = basicLightbox.create(`
-    <img src='${e.target.src}'/>`);
-        instance.show();
+    const aTag = document.createElement('a');
+    aTag.classList.add('gallery__item')
+    aTag.setAttribute("href", item.original)
+    aTag.innerHTML = `<img class="gallery__image" src="${item.preview}" alt="${item.description}" />`
+
+    containerEl.append(aTag)
+    
+    aTag.addEventListener('click', (e) => {
+            e.preventDefault()
+            console.log(e)
+        var lightbox = new SimpleLightbox('.gallery a', { 
+            captionsData: 'alt',
+            captionDelay: 250,
+
+});
     })
 })
