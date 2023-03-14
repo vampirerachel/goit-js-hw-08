@@ -18,7 +18,6 @@ galleryItems.forEach(item => {
     
     aTag.addEventListener('click', (e) => {
             e.preventDefault()
-            console.log(e)
         var lightbox = new SimpleLightbox('.gallery a', { 
             captionsData: 'alt',
             captionDelay: 250,
