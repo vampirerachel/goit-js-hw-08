@@ -1,7 +1,6 @@
 import throttle from 'lodash.throttle';
 const emailEl = document.querySelector('label [name=email]');
-const messageEl = document.querySelector('label [name=message]');
-                                                                                                                     
+const messageEl = document.querySelector('label [name=message]');                                                                                                 
 const formEl = document.querySelector('form');
 
 const savedFormData = JSON.parse(localStorage.getItem('feedback-form-state'));
@@ -22,3 +21,8 @@ if (savedFormData) {
     messageEl.value = savedFormData.message;
 
 }
+
+formEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formEl.reset();
+})
