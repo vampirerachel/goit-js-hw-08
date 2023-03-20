@@ -10,7 +10,7 @@ player.on("timeupdate", throttle((currentTime) => {
 }, 1000));
 
 function setCurrentTime() {
-const currentTimeObj = localStorage.getItem(storagekey);
+const currentTimeObj = localStorage.getItem(storageKey);
 if (!currentTimeObj) {
     return;
 }
