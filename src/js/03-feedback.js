@@ -16,15 +16,23 @@ formEl.addEventListener('input', throttle(e => {
     localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 }, 500),
 );
-formEl.addEventListener('submit', (e) => {
-    e.preventDefault();
-    console.log(savedFormData);
-    formEl.reset();
-    
-    
-})
+
 if (savedFormData) {
     emailEl.value = savedFormData.email;
     messageEl.value = savedFormData.message;
 
 }
+formEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+        const formData = {
+        email: emailEl.value,
+        message: messageEl.value,
+    };
+    localStorage.setItem('feedback-form-state', JSON.stringify(formData));
+    console.log(savedFormData)
+    localStorage.removeItem('feedback-form-state')
+    emailEl.value = '';
+    messageEl.value = '';
+    
+})
+
