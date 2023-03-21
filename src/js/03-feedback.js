@@ -23,6 +23,14 @@ if (savedFormData) {
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log(JSON.parse(localStorage.getItem('feedback-form-state')))
+    if (!emailEl.value){
+        alert("Please provide and email")
+        return
+    }
+    if (!messageEl.value) {
+        alert("Please type a message")
+        return
+    }
     localStorage.removeItem('feedback-form-state')
     messageEl.value = ""
     emailEl.value = ""
